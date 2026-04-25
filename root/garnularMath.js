@@ -1,3 +1,5 @@
+
+var yearResultBox = document.getElementById("yearOut");
 function deduceTimeSinceGarn(year){
     var yearReleased = 2024
     if (year == year%100){
@@ -6,12 +8,15 @@ function deduceTimeSinceGarn(year){
         yearReleased = year - yearReleased;
     }
 
-    if (year == ""){
-        window.alert('Please enter a year.');
-    }else if(yearReleased < 0){
-        window.alert('Impossible.');
-    }else{
-        window.alert('It has been ' + yearReleased + ' years');
+    try{
+        if(year == ""){
+            throw "You need to enter a year for this to work!"
+        }else if(yearReleased < 0){
+            throw "Impossible.";
+        }
+        yearResultBox.innerHTML = 'It has been ' + yearReleased + ' years';
+    }catch(errorMessage){
+        yearResultBox.innerHTML = errorMessage;
     }
 }
 
