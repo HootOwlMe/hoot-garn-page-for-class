@@ -1,0 +1,84 @@
+footer nav a {
+    color: #8e247d;
+    font-size: max(3vh,2vw);
+}
+
+header ul li a{
+    color:darkBlue;
+}
+
+header ul li{
+    list-style-type: "- ";
+    color: #000000;
+    font-size: max(3vh,2vw);
+    margin: 20px;
+}
+
+body{
+    background-color: #dbfffd;
+}
+
+header{
+    color: #110073;
+    font-family: Sans-Serif;
+}
+
+header a{
+    color: #000000;
+    font-size: max(1.3vw,3vh);
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+header h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: max(1.6vw,4vh);
+    text-decoration: none;
+}
+
+header h1{
+    color: #110073;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3vw;
+    font-family: Sans-Serif;
+}
+header button{
+    padding: 10px 20px;
+    font-size: 1vw;
+}
+header h2 input{
+    background-color: #020101;
+    color: white;
+    padding: 10px 20px; font-size: 1vw;
+}
+
+div button{
+    position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+    font-size: 1.2vw;
+}
+
+div p{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: max(1.8vw,2.1vh);
+    text-decoration: underline overline;
+    line-height: max(2.1vw,2.6vh);
+}
