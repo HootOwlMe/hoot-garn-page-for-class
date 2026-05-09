@@ -44,6 +44,7 @@ header h2 input{
     padding: 10px 20px; font-size: 1vw;
 }
 
+
 div button{
     position: absolute; top: 50%; right: 0; transform: translateY(-50%);
     font-size: 1.2vw;
