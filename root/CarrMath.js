@@ -1,14 +1,14 @@
 
 var soundsArray = [];
-soundsArray[0] = new Audio("resources/Car's_Little_Song.opus");
+soundsArray[0] = new Audio("resources/Carr_WhatAreYouTrying.ogg");
 soundsArray[0].volume = 0.14;
-soundsArray[1] = new Audio('resources/Car_IAm.mp3');
+soundsArray[1] = new Audio('resources/Carr_ImBusy.ogg');
 soundsArray[1].volume = 0.1;
-soundsArray[2] = new Audio('resources/Car_CoolStuff.ogg');
+soundsArray[2] = new Audio('resources/Carr_Wonder.ogg');
 soundsArray[2].volume = 0.1;
-soundsArray[3] = new Audio('resources/Car_NotGarn.ogg');
+soundsArray[3] = new Audio('resources/Carr_Bother.ogg');
 soundsArray[3].volume = 0.1;
-soundsArray[4] = new Audio('resources/The Where (Car).opus');
+soundsArray[4] = new Audio('resources/The Where (Carr).opus');
 soundsArray[4].volume = 0.1;
 
 function playSecretButton(index){
@@ -28,19 +28,14 @@ var susClickCount = 0;
 var susButton = document.getElementById("suspiciousButton");
 var secretButton = document.getElementById("secretButton");
 susButton.addEventListener('click',checkToPlaySong);
-secretButton.addEventListener('click',theWhereCar);
+secretButton.addEventListener('click',theWhereCarr);
 function checkToPlaySong(){
     susClickCount += 1;
     susButton.textContent = "Unsuspicous Button (" + susClickCount + ")";
 
     if(susClickCount == 1){
         playSecretButton(0);
-        susButton.textContent = "This is Car's first hit song! (1)"
-        if (!localStorage.getItem('CarSong')){
-            window.alert("You got the: " + secretArray[0].secretTitle() + " achievement!");
-            achieveFound = true;
-            localStorage.setItem('CarSong','true');
-        }
+
     }else{
         stopSecretButton(0);
     }
@@ -60,7 +55,7 @@ function checkToPlaySong(){
 
 let achieveFound = false;
 var secretClickedCount = 0;
-function theWhereCar(){
+function theWhereCarr(){
     secretClickedCount += 1;
     if(secretClickedCount >= 1 && secretClickedCount < 10){
         playSecretButton(4);
@@ -68,13 +63,14 @@ function theWhereCar(){
         stopSecretButton(0);
     }
 
-    if (!localStorage.getItem('WhereCar')){
-        window.alert("You got the: " + secretArray[1].secretTitle() + " achievement!");
+
+    if (!localStorage.getItem('WhereCarr')){
+        window.alert("You got the: " + secretArray[4].secretTitle() + " achievement!");
         achieveFound = true;
-        carFound = true;
-        localStorage.setItem('WhereCar','true');
+        carrFound = true;
+        localStorage.setItem('WhereCarr','true');
     }
-    if(carrFound){
+    if(carFound){
         ohTheWhere();
     }
 }
@@ -82,7 +78,6 @@ function theWhereCar(){
 var navList = document.getElementById("navList");
 function ohTheWhere(){
     if(!document.getElementById('whereList')){
-
         let li = document.createElement("li");
         let a = document.createElement("a");
 

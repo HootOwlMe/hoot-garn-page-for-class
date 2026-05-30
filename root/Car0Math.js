@@ -38,8 +38,13 @@ function checkToPlaySong(){
         document.getElementById("headerTitle").innerHTML = "This is <span style='color:red;'>Ke</span><span style='color:yellow;'>epM</span><span style='color:blue;'>eSa</span><span style='color:green;'>fe</span>! They were abandoned on a different planet by Carr...";
         document.getElementById("description").innerHTML = "KeepMeSafe has the power to draw their attacks into reality. Particularly powerful if you were to fight them...";
         document.getElementById("celebrateButton").hidden = true;
-
         playSecretButton(0);
+
+        if (!localStorage.getItem('KeepsFound'))
+        window.alert("You got the: " + secretArray[2].secretTitle() + " achievement!");
+        localStorage.setItem('KeepsFound',"true");
+
+
     }else{
         document.getElementById("car0Pic").style = "width: 30vw; height: auto;"
         document.getElementById("car0Pic").src = "resources/CarZeroRender.png";

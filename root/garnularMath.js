@@ -1,6 +1,14 @@
 
 var yearResultBox = document.getElementById("yearOut");
 function deduceTimeSinceGarn(year){
+
+    if (year == 47){
+        if (!localStorage.getItem('47')){
+            window.alert("You got the: " + secretArray[5].secretTitle() + " achievement!");
+            localStorage.setItem('47','true');
+        }
+    }
+
     var yearReleased = 2024
     if (year == year%100){
         yearReleased = year - (yearReleased%100);
@@ -44,6 +52,10 @@ function checkToPlaySong(){
     susButton.innerHTML = "Unsuspicous Button (" + susClickCount + ")";
     if(susClickCount == 47){
         playSecretButton(0);
+        if (!localStorage.getItem('TotalGarn')){
+            window.alert("You got the: " + secretArray[3].secretTitle() + " achievement!");
+            localStorage.setItem('TotalGarn','true');
+        }
     }else{
         stopSecretButton(0);
     }

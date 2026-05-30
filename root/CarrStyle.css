@@ -7,7 +7,7 @@ ul {
     color: #83d3d3;
 }
 body{
-    background-color: #120e0b;
+    background-color: #040908;
 }
 
 
@@ -40,7 +40,7 @@ figcaption {
     margin-bottom: 8px;
     font-size: min(1.5vw,2vh);
     color: #ffffff;
-    background-color: #594a43;
+    background-color: #172760;
     padding: 8px;
     border-radius: 4px;
 }
@@ -50,10 +50,12 @@ header h2 {
     margin-top: 0;
     margin-bottom: 1px;
     font-size: 2.1vw;
-    color: #ffd79c;
+    background-color: #000000;
+    color: white;
 }
 header h1{
-    color: #ffd79c;
+    background-color: #000000;
+    color: white;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 2.5vw;
@@ -81,8 +83,8 @@ div button{
     position: absolute;
 
     top: 13%;
-    right: 25%;
-    width: 17px;
+    right: 74%;
+    width: 13px;
     height: 17px;
 
     opacity: 0;

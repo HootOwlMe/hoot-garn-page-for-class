@@ -1,0 +1,46 @@
+nav ul li a {
+    color: #83d3d3;
+    font-size: 2vw
+}
+ul {
+    list-style-type: "- ";
+    color: #83d3d3;
+}
+body{
+    background-color: #120e0b;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1px;
+    font-size: 2.1vw;
+    background-color: #000000;
+    color: white;
+}
+header h1{
+    background-color: #000000;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.5vw;
+}
+header button{
+    padding: 10px 20px;
+    font-size: 1vw;
+}
+header h2 input{
+    padding: 10px 20px; font-size: 1vw;
+}
+
+div button{
+    position: absolute; top: 50%; right: 0; transform: translateY(-50%);
+    margin-top:25px;
+    font-size: 1.2vw;
+}
