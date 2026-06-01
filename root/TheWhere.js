@@ -4,19 +4,21 @@ audio.volume = 0.08;
 let audio2 = new Audio("resources/Oh, The Where.opus");
 audio2.volume = 0.23;
 
-window.onload = function() {
+let playButton = document.getElementById('playButton');
+playButton.onclick = function() {
+    playButton.hidden = 'true';
     playScaryBeep();
     var whereImg = document.createElement('img');
     whereImg.src = 'resources/WhereFull.png';
-    whereImg.style.width = "55%";
-    whereImg.style.opacity = "0.02";
+    whereImg.style.width = "45%";
+    whereImg.style.opacity = "0.05";
     document.body.appendChild(whereImg);
 
     setTimeout(() => {
         clearInterval(beeping);
         setTimeout(() => {
             audio2.play();
-            whereImg.style.opacity = "0.042";
+            whereImg.style.opacity = "0.1";
             setTimeout(() => {
                 whereImg.style.opacity = "0.85";
             }, 17000);
