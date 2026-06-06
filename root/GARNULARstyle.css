@@ -28,11 +28,12 @@ header h2 {
     font-size: 2.1vw;
 }
 header h1{
-    background-color: #0c2506;
+    background-color: #103010;
     color: #a08eff;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 3vw;
+    text-align: center;
 }
 header button{
     padding: 10px 20px;

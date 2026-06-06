@@ -71,5 +71,38 @@ function checkToPlaySong(){
     }else{
         stopSecretButton(2);
     }
-
 }
+
+
+var auctionHouse = document.getElementById('auctionHouse');
+const url = 'https://api.hypixel.net/v2/skyblock/auctions_ended'
+window.onload = function() {
+
+    var trade = "none";
+    fetch(url)
+        .then(response => {
+            return response.json();
+    })
+        .then(data => {
+            trade = data.auctions[0];
+            let tradeItem = data.auctions[0].item_bytes;
+            let tradeCost = data.auctions[0].price;
+
+            let temp = atob(tradeItem);
+            temp = Uint8Array.from(temp, c => c.charCodeAt(0));
+
+            let penultimate = pako.ungzip(temp, { to: "string" })
+            let final = penultimate.substring(penultimate.indexOf("Name"));
+            final = final.substring(8, final.indexOf("\n")-1);
+            let finalCleaned = final.replace(/[^a-zA-Z0-9\s]/g, " ");
+
+            console.log(finalCleaned);
+            auctionHouse.textContent = "The last auction trade in Hypixel Skyblock was: " + finalCleaned + ", For: " + tradeCost + " coins.";
+    })
+        .catch(err => {
+            console.log("uh oh: " + err);
+            auctionHouse.textContent = "It is broken.";
+    });
+};
+
+
