@@ -45,6 +45,10 @@ header h2 input{
     padding: 10px 20px; font-size: 1vw;
 }
 
+div header h5 a{
+    color: gold;
+
+}
 
 div button{
     position: absolute; top: 50%; right: 0; transform: translateY(-50%);

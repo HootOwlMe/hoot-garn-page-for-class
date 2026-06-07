@@ -1,6 +1,13 @@
 
-var yearResultBox = document.getElementById("yearOut");
+
+
+var yearResultBox = document.getElementById('yearOut');
+var yearInputBox = document.getElementById('yearBox');
 function deduceTimeSinceGarn(year){
+    var yearReleased = 2024;
+
+    year = year.replace(/\D/g,"");
+    yearInputBox.value = year;
 
     if (year == 47){
         if (!localStorage.getItem('47')){
@@ -9,7 +16,7 @@ function deduceTimeSinceGarn(year){
         }
     }
 
-    var yearReleased = 2024
+    //if, for some reason, the user enters the year with only the last two digits. ex: if they put '2025' in as '25'
     if (year == year%100){
         yearReleased = year - (yearReleased%100);
     }else{
@@ -97,7 +104,7 @@ window.onload = function() {
             let finalCleaned = final.replace(/[^a-zA-Z0-9\s]/g, " ");
 
             console.log(finalCleaned);
-            auctionHouse.textContent = "The last auction trade in Hypixel Skyblock was: " + finalCleaned + ", For: " + tradeCost + " coins.";
+            auctionHouse.textContent = "The last auction trade in Hypixel Skyblock was: " + finalCleaned + " | For: " + tradeCost + " coins.";
     })
         .catch(err => {
             console.log("uh oh: " + err);
