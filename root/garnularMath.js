@@ -1,6 +1,5 @@
 
 
-
 var yearResultBox = document.getElementById('yearOut');
 var yearInputBox = document.getElementById('yearBox');
 function deduceTimeSinceGarn(year){

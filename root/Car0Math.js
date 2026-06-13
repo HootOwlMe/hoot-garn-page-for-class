@@ -1,4 +1,7 @@
-
+var car0Pic =  $("#car0Pic");
+var celebrateButton = $("#celebrateButton");
+var susButton = $("#suspiciousButton");
+var susClickCount = 0;
 
 var soundsArray = [];
 soundsArray[0] = new Audio('resources/KeepsTheme.mp3');
@@ -15,29 +18,42 @@ function stopSecretButton(index){
 }
 
 function Car0Happy(){
-    document.getElementById("car0Pic").style = "width: 36vw; height: auto;"
-    document.getElementById("car0Pic").src = "resources/Car0Happy.gif"
+    //document.getElementById("car0Pic").style = "width: 36vw; height: auto;"
+    //document.getElementById("car0Pic").src = "resources/Car0Happy.gif"
+    car0Pic.css({width: "36vw", height: "auto"});
+    car0Pic.attr("src","resources/Car0Happy.gif");
     setTimeout(() => {
-        document.getElementById("car0Pic").style = "width: 30vw; height: auto;"
-        document.getElementById("car0Pic").src = "resources/CarZeroRender.png"
+        if(susClickCount != 1){
+            //document.getElementById("car0Pic").style = "width: 30vw; height: auto;"
+            //document.getElementById("car0Pic").src = "resources/CarZeroRender.png"
+            car0Pic.css({width: "30vw", height: "auto"});
+            car0Pic.attr("src","resources/CarZeroRender.png");
+        }
     }, 1300);
 }
 
-document.getElementById("celebrateButton").addEventListener('click', Car0Happy);
+//document.getElementById("celebrateButton").addEventListener('click', Car0Happy);
+celebrateButton.click(Car0Happy);
 
-var susClickCount = 0;
-susButton = document.getElementById("suspiciousButton");
-susButton.addEventListener('click',checkToPlaySong);
+//susButton = document.getElementById("suspiciousButton");
+//susButton.addEventListener('click',checkToPlaySong);
+susButton.click(checkToPlaySong);
+
 function checkToPlaySong(){
     susClickCount += 1;
-    susButton.innerHTML = "Unsuspicous Button (" + susClickCount + ")";
+    //susButton.innerHTML = "Unsuspicious Button (" + susClickCount + ")";
+    susButton.html("Unsuspicious Button (" + susClickCount + ")");
 
     if(susClickCount == 1){
-        document.getElementById("car0Pic").style = "width: 20vw; height: auto;"
-        document.getElementById("car0Pic").src = "resources/Keepsrend.png";
+        //document.getElementById("car0Pic").style = "width: 20vw; height: auto;"
+        //document.getElementById("car0Pic").src = "resources/Keepsrend.png";
+        car0Pic.css({width: "20vw", height: "auto"});
+        car0Pic.attr("src","resources/Keepsrend.png");
+
         document.getElementById("headerTitle").innerHTML = "This is <span style='color:red;'>Ke</span><span style='color:yellow;'>epM</span><span style='color:blue;'>eSa</span><span style='color:green;'>fe</span>! They were abandoned on a different planet by Carr...";
         document.getElementById("description").innerHTML = "KeepMeSafe has the power to draw their attacks into reality. Particularly powerful if you were to fight them...";
-        document.getElementById("celebrateButton").hidden = true;
+        //document.getElementById("celebrateButton").hidden = true;
+        celebrateButton.prop("hidden",true);
         playSecretButton(0);
 
         if (!localStorage.getItem('KeepsFound'))
@@ -46,11 +62,15 @@ function checkToPlaySong(){
 
 
     }else{
-        document.getElementById("car0Pic").style = "width: 30vw; height: auto;"
-        document.getElementById("car0Pic").src = "resources/CarZeroRender.png";
+        //document.getElementById("car0Pic").style = "width: 30vw; height: auto;"
+        //document.getElementById("car0Pic").src = "resources/CarZeroRender.png";
+        car0Pic.css({width: "30vw", height: "auto"});
+        car0Pic.attr("src","resources/CarZeroRender.png");
+
         document.getElementById("headerTitle").innerHTML = "This is Car0! They control the Marblob and befriend KeepMeSafe!";
         document.getElementById("description").innerHTML = "We don't know too much about them yet, but you do get to play as them!";
-        document.getElementById("celebrateButton").hidden = false;
+        //document.getElementById("celebrateButton").hidden = false;
+        celebrateButton.prop("hidden",false);
         stopSecretButton(0);
     }
 
@@ -61,6 +81,5 @@ function checkToPlaySong(){
         stopSecretButton(1);
     }
 
-
-
 }
+
